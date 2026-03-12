@@ -1,0 +1,17 @@
+---
+const headline = "I build the strategy, systems, and products that make ambitious teams work.";
+const words = headline.split(' ');
+---
+<section class="h-dvh min-h-[600px] flex flex-col justify-end px-12 pb-16 relative text-light max-md:px-5 max-md:pb-10">
+  <h1 class="font-serif text-[64px] leading-[1.08] tracking-[-0.02em] max-w-[820px] mb-10 word-reveal max-lg:text-5xl max-md:text-[32px]">
+    {words.map((word, i) => (
+      <span>{word}&nbsp;</span>
+    ))}
+  </h1>
+  <a
+    href="#work"
+    class="inline-flex items-center gap-2.5 px-6 py-3 bg-white/[0.15] backdrop-blur-lg rounded-full text-sm font-[450] tracking-tight w-fit hover:bg-white/[0.22] transition-colors"
+  >
+    My work <span>&rarr;</span>
+  </a>
+</section>

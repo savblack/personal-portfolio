@@ -1,0 +1,17 @@
+---
+const items = ['Summ', 'Cartini', 'Dayzie', 'Junction', 'Nomi'];
+---
+<section class="py-14 border-b border-[var(--color-divider)]" style="background:linear-gradient(180deg, #f7f3f0 6.9%, transparent 100%)">
+  <div class="max-w-shell mx-auto px-12 max-md:px-5">
+    <h2 class="font-serif text-xl font-normal tracking-[-0.01em] text-dark mb-8 max-w-[400px] leading-[1.4]">
+      Companies and projects I've worked with
+    </h2>
+    <div class="flex gap-4 flex-wrap">
+      {items.map(name => (
+        <div class="bg-[var(--color-card)] rounded-xl px-8 py-5 flex items-center justify-center min-w-[140px] h-16">
+          <span class="text-sm font-medium tracking-tight text-dark/[0.35]">{name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

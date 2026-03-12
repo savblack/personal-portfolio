@@ -1,0 +1,106 @@
+---
+const headline = "Let's build something that compounds.";
+const subtitle = "Find out how I chart the path from insight to impact — through strategy, systems, and building — turning ambitious ideas into things that actually work.";
+const headlineWords = headline.split(' ');
+const subtitleWords = subtitle.split(' ');
+---
+<!-- CTA — 200vh tall gradient section matching New Genre -->
+<section
+  class="relative"
+  style="height: 200vh; background: linear-gradient(180deg, #f7f3f000 0%, #f1bd7af7 17.39%, #fcbe6d 32.95%, #e46c44 51.46%, #542512 78.29%, #1e1310 100%)"
+  id="contact"
+>
+  <div class="sticky top-0 h-screen flex flex-col justify-between px-12 py-16 max-md:px-5 max-md:py-10">
+    <div></div>
+    <div class="max-w-[820px]">
+      <h2 class="font-serif text-[56px] leading-[1.12] tracking-[-0.02em] mb-3 max-lg:text-[42px] max-md:text-[32px]">
+        {headlineWords.map((word) => (
+          <span class="inline-block mr-[0.27em] cta-word">{word}</span>
+        ))}
+      </h2>
+      <p class="font-serif text-[40px] leading-[1.15] tracking-[-0.02em] max-w-[780px] max-lg:text-[30px] max-md:text-[24px]">
+        {subtitleWords.map((word) => (
+          <span class="inline-block mr-[0.22em] cta-word-sub">{word}</span>
+        ))}
+      </p>
+    </div>
+    <div>
+      <a
+        href="mailto:sav.black@outlook.com"
+        class="cta-btn inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium tracking-tight transition-colors"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-word {
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+  }
+  .cta-word-sub {
+    color: rgba(12, 16, 24, 0.45);
+    transition: color 0.3s ease;
+  }
+  .cta-btn {
+    background: rgba(12, 16, 24, 0.08);
+    color: var(--color-dark);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .cta-btn:hover {
+    background: rgba(12, 16, 24, 0.14);
+  }
+
+  /* As user scrolls into the darker part of the gradient, switch text to light */
+  @media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
+    /* We use JS below to toggle .cta-dark class */
+  }
+
+  :global(.cta-dark) .cta-word {
+    color: rgb(249, 250, 251);
+  }
+  :global(.cta-dark) .cta-word-sub {
+    color: rgba(249, 250, 251, 0.5);
+  }
+  :global(.cta-dark) .cta-btn {
+    background: rgba(249, 250, 251, 0.12);
+    color: rgb(249, 250, 251);
+  }
+  :global(.cta-dark) .cta-btn:hover {
+    background: rgba(249, 250, 251, 0.2);
+  }
+</style>
+
+<script>
+  const section = document.getElementById('contact');
+  if (section) {
+    const sticky = section.querySelector('.sticky');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Calculate how far we've scrolled through the section
+        const rect = section.getBoundingClientRect();
+        const progress = -rect.top / (rect.height - window.innerHeight);
+        if (progress > 0.35) {
+          sticky?.classList.add('cta-dark');
+        } else {
+          sticky?.classList.remove('cta-dark');
+        }
+      },
+      { threshold: Array.from({ length: 20 }, (_, i) => i / 19) }
+    );
+    observer.observe(section);
+
+    // Also listen to scroll for smoother updates
+    window.addEventListener('scroll', () => {
+      const rect = section.getBoundingClientRect();
+      const progress = -rect.top / (rect.height - window.innerHeight);
+      if (progress > 0.35) {
+        sticky?.classList.add('cta-dark');
+      } else {
+        sticky?.classList.remove('cta-dark');
+      }
+    }, { passive: true });
+  }
+</script>

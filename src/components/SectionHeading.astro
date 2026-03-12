@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  linkText?: string;
+  linkHref?: string;
+}
+const { title, linkText, linkHref } = Astro.props;
+---
+<div class="pt-20 mb-10">
+  <div class="flex justify-between items-baseline">
+    <h2 class="font-serif text-[28px] font-normal tracking-[-0.01em] max-w-[560px] leading-[1.2]">{title}</h2>
+    {linkText && linkHref && (
+      <a href={linkHref} class="text-[13px] font-medium tracking-tight text-[var(--color-muted)] hover:text-dark transition-colors flex items-center gap-1.5">
+        {linkText} &rarr;
+      </a>
+    )}
+  </div>
+  <div class="h-px bg-[var(--color-divider)] mt-6"></div>
+</div>

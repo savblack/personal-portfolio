@@ -1,0 +1,45 @@
+<div
+  id="mobileMenu"
+  class="fixed inset-0 z-[60] bg-dark text-light flex flex-col justify-between p-8 translate-x-full transition-transform duration-300"
+  aria-hidden="true"
+>
+  <div class="flex justify-between items-center">
+    <span class="text-sm font-semibold tracking-tight">Savannah Black</span>
+    <button id="menuClose" class="text-sm opacity-70" aria-label="Close menu">Close</button>
+  </div>
+  <nav class="flex flex-col gap-6">
+    <a href="#work" class="text-3xl font-serif menu-link">Work</a>
+    <a href="/about" class="text-3xl font-serif menu-link">About</a>
+    <a href="#approach" class="text-3xl font-serif menu-link">Approach</a>
+    <a href="#writing" class="text-3xl font-serif menu-link">Writing</a>
+    <a href="/contact" class="text-3xl font-serif menu-link">Contact</a>
+  </nav>
+  <div class="text-xs opacity-40">
+    <span>Sydney, Australia</span>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const close = document.getElementById('menuClose');
+  const menu = document.getElementById('mobileMenu');
+
+  function openMenu() {
+    menu?.classList.remove('translate-x-full');
+    menu?.setAttribute('aria-hidden', 'false');
+    toggle?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu?.classList.add('translate-x-full');
+    menu?.setAttribute('aria-hidden', 'true');
+    toggle?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  menu?.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

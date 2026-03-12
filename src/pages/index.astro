@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Hero from '../components/Hero.astro';
+import LogoStrip from '../components/LogoStrip.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import WorkRow from '../components/WorkRow.astro';
+import ProcessCard from '../components/ProcessCard.astro';
+import FeedCard from '../components/FeedCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Footer from '../components/Footer.astro';
+import { projects } from '../data/projects';
+---
+
+<Base>
+  <Nav />
+  <MobileMenu />
+  <Hero />
+
+  <div class="relative z-10 bg-white">
+    <LogoStrip />
+
+    <div class="max-w-shell mx-auto px-12 max-md:px-5" id="work">
+      <SectionHeading title="Selected work, from strategy to shipping" linkText="See all" linkHref="/work" />
+      {projects.map(p => <WorkRow {...p} />)}
+    </div>
+
+    <div class="max-w-shell mx-auto px-12 py-20 max-md:px-5" id="approach">
+      <SectionHeading title="How I work, shaped by building real things" />
+      <div class="grid grid-cols-3 gap-5 py-10 max-lg:grid-cols-2 max-md:grid-cols-1">
+        <ProcessCard title="Diagnose" description="Find the real constraint. Use AI to surface patterns and blockers before defaulting to intuition." />
+        <ProcessCard title="Design" description="Build systems that retain context, reduce repetition, and improve with use. Not one-off fixes." />
+        <ProcessCard title="Build" description="Ship working software, operating systems, and delivery structures. Not decks." />
+      </div>
+    </div>
+
+    <div class="max-w-shell mx-auto px-12 pb-20 max-md:px-5" id="writing">
+      <SectionHeading title="Thinking out loud" linkText="Read all" linkHref="/writing" />
+      <div class="flex gap-5 overflow-x-auto py-10 no-scrollbar">
+        <FeedCard title="Why I build things on the side" meta="Essay" />
+        <FeedCard title="AI-native operations: what it actually means" meta="Essay" />
+        <FeedCard title="From operator to architect" meta="Essay" />
+      </div>
+    </div>
+
+  </div>
+
+  <CtaSection />
+  <Footer />
+</Base>

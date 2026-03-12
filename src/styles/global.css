@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #ffffff;
+  --color-dark: rgb(12, 16, 24);
+  --color-light: rgb(249, 250, 251);
+  --color-muted: rgba(12, 16, 24, 0.4);
+  --color-card: rgba(153, 161, 175, 0.06);
+  --color-badge: rgba(100, 106, 120, 0.07);
+  --color-divider: rgba(68, 84, 107, 0.14);
+  --color-footer: rgb(30, 19, 16);
+}
+
+/* ── Base styles ── */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-dark);
+  background: var(--color-bg);
+}
+
+/* ── Word reveal animation ── */
+
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.word-reveal span {
+  display: inline-block;
+  opacity: 0;
+  animation: wordReveal 0.5s ease forwards;
+}
+
+.word-reveal span:nth-child(1) { animation-delay: 0.0s; }
+.word-reveal span:nth-child(2) { animation-delay: 0.08s; }
+.word-reveal span:nth-child(3) { animation-delay: 0.16s; }
+.word-reveal span:nth-child(4) { animation-delay: 0.24s; }
+.word-reveal span:nth-child(5) { animation-delay: 0.32s; }
+.word-reveal span:nth-child(6) { animation-delay: 0.40s; }
+.word-reveal span:nth-child(7) { animation-delay: 0.48s; }
+.word-reveal span:nth-child(8) { animation-delay: 0.56s; }
+.word-reveal span:nth-child(9) { animation-delay: 0.64s; }
+.word-reveal span:nth-child(10) { animation-delay: 0.72s; }
+
+/* ── Fade in up animation ── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ── No scrollbar utility ── */
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
