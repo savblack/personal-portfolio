@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Motif Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #0c1018; }
+
+  .section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 56px;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .section p.sub {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+  }
+  .label {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .label span {
+    opacity: 0.5;
+    display: block;
+    margin-top: 4px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+
+  /* ── Option 1: Constellations ── */
+  .constellation-bg {
+    background: linear-gradient(180deg, #280e01 0%, #182644 30%, #5a769f 60%, #87a1c4 100%);
+  }
+  .constellation-bg h2, .constellation-bg p.sub, .constellation-bg .label { color: #f9fafb; }
+  .constellation-bg p.sub { color: rgba(249,250,251,0.5); }
+  .constellation-bg .label span { color: rgba(249,250,251,0.4); }
+
+  .constellation-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  /* ── Option 2: Topographic ── */
+  .topo-bg {
+    background: linear-gradient(180deg, #d4556a 0%, #dc8088 40%, #e8b4a8 70%, #faf0e8 100%);
+  }
+  .topo-bg h2 { color: #f9fafb; }
+  .topo-bg p.sub { color: rgba(249,250,251,0.5); }
+  .topo-bg .label { color: #f9fafb; }
+  .topo-bg .label span { color: rgba(249,250,251,0.4); }
+
+  .topo-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.15;
+  }
+
+  /* ── Option 3: Crystal ── */
+  .crystal-bg {
+    background: linear-gradient(180deg, #e8dca0 0%, #f0b46a 30%, #d86842 60%, #582414 100%);
+  }
+  .crystal-bg h2 { color: #f9fafb; }
+  .crystal-bg p.sub { color: rgba(249,250,251,0.5); }
+  .crystal-bg .label { color: #f9fafb; }
+  .crystal-bg .label span { color: rgba(249,250,251,0.4); }
+
+  .crystal-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.2;
+  }
+
+  /* ── Option 4: Banksia ── */
+  .banksia-bg {
+    background: linear-gradient(180deg, #1e1310 0%, #3a1a10 30%, #843220 60%, #d86842 100%);
+  }
+  .banksia-bg h2 { color: #f9fafb; }
+  .banksia-bg p.sub { color: rgba(249,250,251,0.5); }
+  .banksia-bg .label { color: #f9fafb; }
+  .banksia-bg .label span { color: rgba(249,250,251,0.4); }
+
+  .banksia-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.25;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: rgba(68,84,107,0.14);
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- OPTION 1: CONSTELLATIONS                        -->
+<!-- ════════════════════════════════════════════════ -->
+<section class="section constellation-bg">
+  <div class="label">
+    Option 1: Constellations
+    <span>Dots and lines connecting — strategy as pattern recognition. Works on the dark hero gradient.</span>
+  </div>
+
+  <svg class="constellation-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <!-- Stars -->
+    <circle cx="180" cy="120" r="3" fill="#f9fafb"/>
+    <circle cx="340" cy="200" r="2" fill="#f9fafb"/>
+    <circle cx="520" cy="80" r="2.5" fill="#f9fafb"/>
+    <circle cx="680" cy="260" r="3" fill="#f9fafb"/>
+    <circle cx="890" cy="140" r="2" fill="#f9fafb"/>
+    <circle cx="1050" cy="300" r="3.5" fill="#f9fafb"/>
+    <circle cx="1200" cy="180" r="2" fill="#f9fafb"/>
+    <circle cx="260" cy="420" r="2.5" fill="#f9fafb"/>
+    <circle cx="450" cy="380" r="2" fill="#f9fafb"/>
+    <circle cx="620" cy="500" r="3" fill="#f9fafb"/>
+    <circle cx="780" cy="440" r="2" fill="#f9fafb"/>
+    <circle cx="960" cy="520" r="2.5" fill="#f9fafb"/>
+    <circle cx="1140" cy="460" r="2" fill="#f9fafb"/>
+    <circle cx="140" cy="600" r="2" fill="#f9fafb"/>
+    <circle cx="380" cy="650" r="3" fill="#f9fafb"/>
+    <circle cx="560" cy="720" r="2" fill="#f9fafb"/>
+    <circle cx="820" cy="680" r="2.5" fill="#f9fafb"/>
+    <circle cx="1020" cy="740" r="2" fill="#f9fafb"/>
+    <circle cx="1260" cy="640" r="3" fill="#f9fafb"/>
+    <circle cx="720" cy="160" r="1.5" fill="#f9fafb"/>
+    <circle cx="400" cy="560" r="1.5" fill="#f9fafb"/>
+    <circle cx="1100" cy="580" r="1.5" fill="#f9fafb"/>
+    <!-- Connections -->
+    <line x1="180" y1="120" x2="340" y2="200" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="340" y1="200" x2="520" y2="80" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="520" y1="80" x2="680" y2="260" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="680" y1="260" x2="890" y2="140" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="890" y1="140" x2="1050" y2="300" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="1050" y1="300" x2="1200" y2="180" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="260" y1="420" x2="450" y2="380" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="450" y1="380" x2="620" y2="500" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="620" y1="500" x2="780" y2="440" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="780" y1="440" x2="960" y2="520" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="960" y1="520" x2="1140" y2="460" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="340" y1="200" x2="260" y2="420" stroke="#f9fafb" stroke-width="0.3"/>
+    <line x1="680" y1="260" x2="620" y2="500" stroke="#f9fafb" stroke-width="0.3"/>
+    <line x1="1050" y1="300" x2="1140" y2="460" stroke="#f9fafb" stroke-width="0.3"/>
+    <line x1="140" y1="600" x2="380" y2="650" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="380" y1="650" x2="560" y2="720" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="560" y1="720" x2="820" y2="680" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="820" y1="680" x2="1020" y2="740" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="1020" y1="740" x2="1260" y2="640" stroke="#f9fafb" stroke-width="0.5"/>
+    <line x1="260" y1="420" x2="140" y2="600" stroke="#f9fafb" stroke-width="0.3"/>
+    <line x1="620" y1="500" x2="560" y2="720" stroke="#f9fafb" stroke-width="0.3"/>
+    <line x1="960" y1="520" x2="1020" y2="740" stroke="#f9fafb" stroke-width="0.3"/>
+    <line x1="1140" y1="460" x2="1260" y2="640" stroke="#f9fafb" stroke-width="0.3"/>
+    <!-- Faint cross-connections -->
+    <line x1="180" y1="120" x2="260" y2="420" stroke="#f9fafb" stroke-width="0.2" opacity="0.4"/>
+    <line x1="890" y1="140" x2="960" y2="520" stroke="#f9fafb" stroke-width="0.2" opacity="0.4"/>
+    <line x1="450" y1="380" x2="380" y2="650" stroke="#f9fafb" stroke-width="0.2" opacity="0.4"/>
+    <line x1="780" y1="440" x2="820" y2="680" stroke="#f9fafb" stroke-width="0.2" opacity="0.4"/>
+  </svg>
+
+  <h2>Strategy is invisible</h2>
+  <p class="sub">until it compounds.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- OPTION 2: TOPOGRAPHIC                           -->
+<!-- ════════════════════════════════════════════════ -->
+<section class="section topo-bg">
+  <div class="label">
+    Option 2: Topographic Lines
+    <span>Contour maps — navigating complex terrain. Natural, elegant, works beautifully on the pink gradient.</span>
+  </div>
+
+  <svg class="topo-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <style>
+        .topo-line { fill: none; stroke: #f9fafb; stroke-width: 1.2; }
+      </style>
+    </defs>
+    <!-- Concentric contour lines, offset center -->
+    <path class="topo-line" d="M 900,450 Q 950,350 1000,380 Q 1060,420 1040,480 Q 1010,540 940,530 Q 870,510 880,460 Z"/>
+    <path class="topo-line" d="M 860,440 Q 880,300 1020,320 Q 1120,360 1100,500 Q 1070,600 930,590 Q 810,570 820,460 Z"/>
+    <path class="topo-line" d="M 800,430 Q 810,240 1060,260 Q 1190,310 1160,520 Q 1120,660 910,660 Q 740,640 760,460 Z"/>
+    <path class="topo-line" d="M 740,420 Q 740,180 1100,200 Q 1260,260 1220,540 Q 1170,720 900,730 Q 670,710 700,460 Z"/>
+    <path class="topo-line" d="M 680,410 Q 670,120 1140,140 Q 1330,210 1280,560 Q 1220,780 890,800 Q 600,780 640,460 Z"/>
+    <path class="topo-line" d="M 620,400 Q 600,60 1180,80 Q 1400,160 1340,580 Q 1270,840 880,870 Q 530,850 580,460 Z"/>
+    <!-- Secondary cluster -->
+    <path class="topo-line" d="M 300,350 Q 320,290 370,310 Q 410,340 390,380 Q 360,410 320,390 Z" opacity="0.6"/>
+    <path class="topo-line" d="M 260,340 Q 270,240 400,260 Q 460,300 440,400 Q 410,460 310,450 Q 230,430 240,360 Z" opacity="0.6"/>
+    <path class="topo-line" d="M 210,330 Q 210,180 430,200 Q 520,250 500,420 Q 460,520 300,520 Q 180,500 190,360 Z" opacity="0.6"/>
+    <path class="topo-line" d="M 160,320 Q 150,120 460,140 Q 580,200 560,440 Q 510,580 290,590 Q 130,570 140,360 Z" opacity="0.5"/>
+  </svg>
+
+  <h2>Strategy is invisible</h2>
+  <p class="sub">until it compounds.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- OPTION 3: CRYSTAL FORMATIONS                    -->
+<!-- ════════════════════════════════════════════════ -->
+<section class="section crystal-bg">
+  <div class="label">
+    Option 3: Crystal Formations
+    <span>Geometric structures that grow and compound naturally. Angular, architectural, mineral-inspired.</span>
+  </div>
+
+  <svg class="crystal-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <style>
+        .crystal { fill: none; stroke: #f9fafb; stroke-width: 1; }
+        .crystal-fill { fill: #f9fafb; opacity: 0.04; stroke: #f9fafb; stroke-width: 0.8; }
+      </style>
+    </defs>
+    <!-- Main crystal cluster (right side) -->
+    <polygon class="crystal-fill" points="1000,800 960,500 1020,480 1060,780"/>
+    <polygon class="crystal-fill" points="1020,480 1080,300 1120,320 1060,500"/>
+    <polygon class="crystal-fill" points="1060,500 1120,320 1160,340 1100,520"/>
+    <polygon class="crystal-fill" points="1060,780 1060,500 1100,520 1100,760"/>
+    <polygon class="crystal-fill" points="1100,520 1160,340 1200,400 1140,560"/>
+    <polygon class="crystal-fill" points="1080,300 1100,180 1140,200 1120,320"/>
+    <polygon class="crystal-fill" points="1140,200 1170,100 1200,120 1160,220"/>
+    <!-- Secondary cluster (left) -->
+    <polygon class="crystal-fill" points="300,800 280,600 320,580 340,780"/>
+    <polygon class="crystal-fill" points="320,580 350,420 380,440 350,590"/>
+    <polygon class="crystal-fill" points="280,600 300,480 340,500 320,610"/>
+    <polygon class="crystal-fill" points="350,420 370,320 400,340 380,440"/>
+    <!-- Small crystals scattered -->
+    <polygon class="crystal-fill" points="600,800 590,700 610,690 620,790" opacity="0.5"/>
+    <polygon class="crystal-fill" points="750,800 740,720 760,710 770,790" opacity="0.4"/>
+    <polygon class="crystal-fill" points="500,800 494,740 510,730 516,790" opacity="0.3"/>
+    <!-- Floating shards -->
+    <polygon class="crystal" points="850,300 840,260 860,250 870,290" opacity="0.3"/>
+    <polygon class="crystal" points="700,200 694,170 710,160 716,190" opacity="0.2"/>
+    <polygon class="crystal" points="1250,500 1244,470 1260,460 1266,490" opacity="0.3"/>
+  </svg>
+
+  <h2>Strategy is invisible</h2>
+  <p class="sub">until it compounds.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- OPTION 4: BANKSIA (Australian Botanical)        -->
+<!-- ════════════════════════════════════════════════ -->
+<section class="section banksia-bg">
+  <div class="label">
+    Option 4: Australian Banksia
+    <span>Native botanical with spiral geometry — personal to Sydney, architectural, echoes compounding growth.</span>
+  </div>
+
+  <svg class="banksia-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <style>
+        .stem { fill: none; stroke: #f9fafb; stroke-width: 2; }
+        .petal { fill: none; stroke: #f9fafb; stroke-width: 0.8; }
+        .petal-fill { fill: #f9fafb; opacity: 0.05; stroke: #f9fafb; stroke-width: 0.6; }
+      </style>
+    </defs>
+    <!-- Main stem -->
+    <path class="stem" d="M 1000,900 Q 990,700 1010,500 Q 1020,350 1000,200" opacity="0.6"/>
+    <!-- Banksia cone (stylized spiral rows of follicles) -->
+    <!-- Bottom row -->
+    <ellipse class="petal-fill" cx="970" cy="480" rx="18" ry="8" transform="rotate(-20 970 480)"/>
+    <ellipse class="petal-fill" cx="1000" cy="475" rx="18" ry="8" transform="rotate(0 1000 475)"/>
+    <ellipse class="petal-fill" cx="1030" cy="480" rx="18" ry="8" transform="rotate(20 1030 480)"/>
+    <!-- Row 2 -->
+    <ellipse class="petal-fill" cx="960" cy="450" rx="20" ry="9" transform="rotate(-25 960 450)"/>
+    <ellipse class="petal-fill" cx="995" cy="443" rx="20" ry="9" transform="rotate(-5 995 443)"/>
+    <ellipse class="petal-fill" cx="1030" cy="445" rx="20" ry="9" transform="rotate(15 1030 445)"/>
+    <ellipse class="petal-fill" cx="1055" cy="455" rx="18" ry="8" transform="rotate(30 1055 455)"/>
+    <!-- Row 3 -->
+    <ellipse class="petal-fill" cx="955" cy="415" rx="22" ry="10" transform="rotate(-30 955 415)"/>
+    <ellipse class="petal-fill" cx="990" cy="405" rx="22" ry="10" transform="rotate(-10 990 405)"/>
+    <ellipse class="petal-fill" cx="1025" cy="403" rx="22" ry="10" transform="rotate(10 1025 403)"/>
+    <ellipse class="petal-fill" cx="1055" cy="410" rx="20" ry="9" transform="rotate(28 1055 410)"/>
+    <!-- Row 4 (widest) -->
+    <ellipse class="petal-fill" cx="948" cy="375" rx="24" ry="11" transform="rotate(-35 948 375)"/>
+    <ellipse class="petal-fill" cx="985" cy="363" rx="24" ry="11" transform="rotate(-12 985 363)"/>
+    <ellipse class="petal-fill" cx="1022" cy="360" rx="24" ry="11" transform="rotate(8 1022 360)"/>
+    <ellipse class="petal-fill" cx="1055" cy="368" rx="22" ry="10" transform="rotate(30 1055 368)"/>
+    <!-- Row 5 -->
+    <ellipse class="petal-fill" cx="955" cy="335" rx="22" ry="10" transform="rotate(-30 955 335)"/>
+    <ellipse class="petal-fill" cx="990" cy="325" rx="22" ry="10" transform="rotate(-8 990 325)"/>
+    <ellipse class="petal-fill" cx="1025" cy="323" rx="22" ry="10" transform="rotate(12 1025 323)"/>
+    <ellipse class="petal-fill" cx="1050" cy="332" rx="20" ry="9" transform="rotate(28 1050 332)"/>
+    <!-- Row 6 (tapering) -->
+    <ellipse class="petal-fill" cx="962" cy="295" rx="20" ry="9" transform="rotate(-25 962 295)"/>
+    <ellipse class="petal-fill" cx="995" cy="287" rx="20" ry="9" transform="rotate(-5 995 287)"/>
+    <ellipse class="petal-fill" cx="1025" cy="290" rx="20" ry="9" transform="rotate(18 1025 290)"/>
+    <!-- Row 7 -->
+    <ellipse class="petal-fill" cx="972" cy="260" rx="16" ry="7" transform="rotate(-18 972 260)"/>
+    <ellipse class="petal-fill" cx="1000" cy="255" rx="16" ry="7" transform="rotate(0 1000 255)"/>
+    <ellipse class="petal-fill" cx="1025" cy="260" rx="16" ry="7" transform="rotate(18 1025 260)"/>
+    <!-- Top -->
+    <ellipse class="petal-fill" cx="985" cy="232" rx="12" ry="6" transform="rotate(-10 985 232)"/>
+    <ellipse class="petal-fill" cx="1010" cy="235" rx="12" ry="6" transform="rotate(10 1010 235)"/>
+    <ellipse class="petal-fill" cx="997" cy="215" rx="8" ry="4" transform="rotate(0 997 215)"/>
+
+    <!-- Spiky pistils radiating out -->
+    <line class="petal" x1="940" y1="380" x2="880" y2="360" opacity="0.3"/>
+    <line class="petal" x1="935" y1="420" x2="870" y2="420" opacity="0.25"/>
+    <line class="petal" x1="940" y1="340" x2="885" y2="310" opacity="0.25"/>
+    <line class="petal" x1="950" y1="300" x2="900" y2="270" opacity="0.2"/>
+    <line class="petal" x1="1065" y1="380" x2="1120" y2="360" opacity="0.3"/>
+    <line class="petal" x1="1070" y1="420" x2="1130" y2="420" opacity="0.25"/>
+    <line class="petal" x1="1060" y1="340" x2="1115" y2="310" opacity="0.25"/>
+    <line class="petal" x1="1050" y1="300" x2="1100" y2="270" opacity="0.2"/>
+    <line class="petal" x1="1000" y1="210" x2="1000" y2="160" opacity="0.2"/>
+    <line class="petal" x1="985" y1="220" x2="965" y2="175" opacity="0.15"/>
+    <line class="petal" x1="1015" y1="220" x2="1035" y2="175" opacity="0.15"/>
+
+    <!-- Leaves along stem -->
+    <path class="petal" d="M 1010,550 Q 1060,520 1090,540 Q 1060,560 1010,550" opacity="0.2"/>
+    <path class="petal" d="M 990,600 Q 940,570 910,590 Q 940,610 990,600" opacity="0.2"/>
+    <path class="petal" d="M 1005,680 Q 1050,650 1080,670 Q 1050,690 1005,680" opacity="0.15"/>
+
+    <!-- Second smaller banksia (left, background) -->
+    <path class="stem" d="M 350,900 Q 340,750 360,600" opacity="0.25"/>
+    <ellipse class="petal-fill" cx="340" cy="580" rx="12" ry="6" transform="rotate(-15 340 580)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="360" cy="575" rx="12" ry="6" transform="rotate(5 360 575)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="335" cy="560" rx="14" ry="7" transform="rotate(-20 335 560)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="358" cy="555" rx="14" ry="7" transform="rotate(8 358 555)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="380" cy="562" rx="12" ry="6" transform="rotate(25 380 562)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="340" cy="540" rx="13" ry="6" transform="rotate(-15 340 540)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="362" cy="536" rx="13" ry="6" transform="rotate(10 362 536)" opacity="0.4"/>
+    <ellipse class="petal-fill" cx="350" cy="520" rx="10" ry="5" transform="rotate(0 350 520)" opacity="0.4"/>
+  </svg>
+
+  <h2>Strategy is invisible</h2>
+  <p class="sub">until it compounds.</p>
+</section>
+
+</body>
+</html>
