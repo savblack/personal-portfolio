@@ -28,8 +28,22 @@ const {
       class="fixed inset-x-0 top-0 -z-10 pointer-events-none"
       style="height: 240vh; background: linear-gradient(180deg, #280e01 0%, #182644 15.26%, #5a769f 30.28%, #87a1c4 43.38%, #c1d3e6 58.83%, #fef9e1 79.71%, #f7f3f0 100%);"
       aria-hidden="true"
-    ></div>
+    >
+      <div class="hero-grain"></div>
+    </div>
 
     <slot />
+
+    <style>
+      .hero-grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.60;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 200px 200px;
+        pointer-events: none;
+      }
+    </style>
   </body>
 </html>

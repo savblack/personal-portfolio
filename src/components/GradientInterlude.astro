@@ -8,6 +8,7 @@ const line2 = "until it compounds.";
   style="height: 200vh; background: linear-gradient(180deg, #d4556a 0%, #d86878 12%, #dc8088 28%, #e09898 42%, #e4b0a8 56%, #eac4b8 68%, #f0d5c8 80%, #f5e4d8 90%, #faf0e8 100%)"
   id="interlude"
 >
+  <div class="grain-overlay" aria-hidden="true"></div>
   <div class="sticky top-0 h-screen flex items-center px-12 max-md:px-5">
     <div class="max-w-shell mx-auto w-full">
       <p class="font-serif text-[56px] leading-[1.12] tracking-[-0.02em] max-w-[700px] max-lg:text-[42px] max-md:text-[32px]">
@@ -19,6 +20,17 @@ const line2 = "until it compounds.";
 </section>
 
 <style>
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.60;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
   .interlude-line1 {
     color: rgb(249, 250, 251);
     transition: color 0.4s ease;
