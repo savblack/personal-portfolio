@@ -8,6 +8,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import WorkRow from '../components/WorkRow.astro';
 import ProcessCard from '../components/ProcessCard.astro';
 import FeedCard from '../components/FeedCard.astro';
+import GradientInterlude from '../components/GradientInterlude.astro';
 import CtaSection from '../components/CtaSection.astro';
 import Footer from '../components/Footer.astro';
 import { projects } from '../data/projects';
@@ -25,6 +26,8 @@ import { projects } from '../data/projects';
       <SectionHeading title="Selected work, from strategy to shipping" linkText="See all" linkHref="/work" />
       {projects.map(p => <WorkRow {...p} />)}
     </div>
+
+    <GradientInterlude />
 
     <div class="max-w-shell mx-auto px-12 py-20 max-md:px-5" id="approach">
       <SectionHeading title="How I work, shaped by building real things" />
