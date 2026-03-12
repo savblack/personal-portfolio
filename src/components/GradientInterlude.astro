@@ -1,11 +1,55 @@
-<!-- Gradient interlude — full-height pink-to-cream break between content sections -->
+---
+const line1 = "Strategy is invisible";
+const line2 = "until it compounds.";
+---
+<!-- Gradient interlude — full-height dark pink to light cream with text color shift -->
 <section
-  class="min-h-screen flex items-center px-12 max-md:px-5"
-  style="background: linear-gradient(180deg, #ffffff 0%, #f2d4e0 10%, #e8a8c4 25%, #e0a0b0 40%, #e8b8a0 55%, #f0d0b8 70%, #f5e4d0 85%, #faf2ea 95%, #ffffff 100%)"
+  class="relative"
+  style="height: 200vh; background: linear-gradient(180deg, #ffffff 0%, #8c3a6b 8%, #a33d6e 16%, #b84872 28%, #d46a8a 42%, #e8a0a8 56%, #f0c4b8 68%, #f5ddd0 78%, #faf0e8 90%, #ffffff 100%)"
+  id="interlude"
 >
-  <div class="max-w-shell mx-auto w-full">
-    <p class="font-serif text-[56px] leading-[1.12] tracking-[-0.02em] text-dark/70 max-w-[700px] max-lg:text-[42px] max-md:text-[32px]">
-      Strategy is invisible until it compounds.
-    </p>
+  <div class="sticky top-0 h-screen flex items-center px-12 max-md:px-5">
+    <div class="max-w-shell mx-auto w-full">
+      <p class="font-serif text-[56px] leading-[1.12] tracking-[-0.02em] max-w-[700px] max-lg:text-[42px] max-md:text-[32px]">
+        <span class="interlude-line1">{line1}</span><br />
+        <span class="interlude-line2">{line2}</span>
+      </p>
+    </div>
   </div>
 </section>
+
+<style>
+  .interlude-line1 {
+    color: rgb(249, 250, 251);
+    transition: color 0.4s ease;
+  }
+  .interlude-line2 {
+    color: rgba(249, 250, 251, 0.5);
+    transition: color 0.4s ease;
+  }
+
+  :global(.interlude-light) .interlude-line1 {
+    color: rgb(12, 16, 24);
+  }
+  :global(.interlude-light) .interlude-line2 {
+    color: rgba(12, 16, 24, 0.45);
+  }
+</style>
+
+<script>
+  const section = document.getElementById('interlude');
+  if (section) {
+    const sticky = section.querySelector('.sticky');
+    function updateInterlude() {
+      const rect = section.getBoundingClientRect();
+      const progress = -rect.top / (rect.height - window.innerHeight);
+      if (progress > 0.35) {
+        sticky?.classList.add('interlude-light');
+      } else {
+        sticky?.classList.remove('interlude-light');
+      }
+    }
+    window.addEventListener('scroll', updateInterlude, { passive: true });
+    updateInterlude();
+  }
+</script>
