@@ -1,17 +1,54 @@
 ---
-const items = ['Summ', 'Cartini', 'Dayzie', 'Junction', 'Nomi'];
+const capabilities = [
+  {
+    title: 'AI Systems',
+    description: 'Building AI into real workflows, not demos. Tools that retain context and compound over time.',
+  },
+  {
+    title: 'Product',
+    description: 'Taking ideas from zero to shipped. Strategy, design, and code — whatever the bottleneck needs.',
+  },
+  {
+    title: 'Operations',
+    description: 'Designing the systems that make teams move fast. Processes, automation, and the connective tissue between tools.',
+  },
+];
+
+const projects = ['Summ', 'Cartini', 'Dayzie', 'Junction', 'Nomi'];
 ---
-<section class="py-14 border-b border-[var(--color-divider)]" style="background:linear-gradient(180deg, #f7f3f0 6.9%, transparent 100%)">
+
+<section class="py-24 border-b border-[var(--color-divider)]" style="background:linear-gradient(180deg, #f7f3f0 6.9%, transparent 100%)">
   <div class="max-w-shell mx-auto px-12 max-md:px-5">
-    <h2 class="font-serif text-xl font-normal tracking-[-0.01em] text-dark mb-8 max-w-[400px] leading-[1.4]">
-      Companies and projects I've worked with
-    </h2>
-    <div class="flex gap-4 flex-wrap">
-      {items.map(name => (
-        <div class="bg-[var(--color-card)] rounded-xl px-8 py-5 flex items-center justify-center min-w-[140px] h-16">
-          <span class="text-sm font-medium tracking-tight text-dark/[0.35]">{name}</span>
-        </div>
-      ))}
+
+    <!-- Two-column grid -->
+    <div class="grid grid-cols-2 gap-16 max-md:grid-cols-1 max-md:gap-10">
+
+      <!-- Left: About -->
+      <div>
+        <span class="block font-mono text-xs uppercase tracking-widest text-dark/40 mb-4">About</span>
+        <h2 class="font-serif text-3xl font-normal tracking-[-0.01em] text-dark leading-[1.3] mb-6">
+          Who I am and what I do
+        </h2>
+        <p class="text-base leading-relaxed text-dark/60 max-w-[480px]">
+          I'm a Chief of Staff at a crypto company, building AI-powered operating systems, products, and the infrastructure that ties them together. I came up through operations — not engineering — and learned to build by building. I think the best work happens when strategy, systems, and shipping stay in the same hands.
+        </p>
+      </div>
+
+      <!-- Right: Capability cards -->
+      <div class="flex flex-col gap-4">
+        {capabilities.map(cap => (
+          <div class="bg-[var(--color-card)] border border-[var(--color-divider)] rounded-xl p-6">
+            <h3 class="text-sm font-semibold tracking-tight text-dark mb-1.5">{cap.title}</h3>
+            <p class="text-sm leading-relaxed text-dark/50">{cap.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
+
+    <!-- Bottom row: Currently building -->
+    <p class="mt-14 text-sm text-dark/30 tracking-tight">
+      Currently building: {projects.join(' · ')}
+    </p>
+
   </div>
 </section>

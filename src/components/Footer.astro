@@ -1,51 +1,29 @@
-<!-- Footer — warm dark bg continuing from CTA gradient, New Genre-inspired -->
+<!-- Footer — warm dark bg continuing from CTA gradient -->
 <footer class="text-light relative" style="background: linear-gradient(180deg, #1e1310 0%, #1b110e 30%, #18100c 60%, #140e0a 80%, #100c08 100%)">
   <div class="grain-overlay" aria-hidden="true"></div>
-  <!-- Top: Work with me CTA -->
+
+  <!-- Contact + availability -->
   <div class="relative z-10 max-w-shell mx-auto px-12 pt-20 pb-16 max-md:px-5 max-md:pt-14 max-md:pb-10">
     <a
       href="mailto:sav.black@outlook.com"
-      class="inline-flex items-center gap-3 text-sm font-medium text-light/60 hover:text-light transition-colors"
+      class="text-base font-medium hover:text-light/80 transition-colors"
     >
-      <span>Work with me</span>
+      sav.black@outlook.com
     </a>
+    <p class="text-sm text-light/40 mt-3 leading-relaxed">
+      Based in Sydney. Open to advisory, fractional, and project-based work — remote-first.
+    </p>
   </div>
 
-  <!-- Locations grid -->
-  <div class="relative z-10 max-w-shell mx-auto px-12 max-md:px-5">
-    <div class="grid grid-cols-2 gap-16 pb-20 max-md:grid-cols-1 max-md:gap-10 max-md:pb-14">
-      <div>
-        <div class="text-base font-medium mb-2">Sydney</div>
-        <div class="font-mono text-sm text-light/40 mb-5" id="sydneyTime">--:-- --</div>
-        <div class="text-sm text-light/40 leading-7">
-          sav.black@outlook.com
-        </div>
-      </div>
-      <div>
-        <div class="text-base font-medium mb-2">Available globally</div>
-        <div class="font-mono text-sm text-light/40 mb-5">Remote-first</div>
-        <div class="text-sm text-light/40 leading-7">
-          Open to advisory, fractional,<br />
-          and project-based work.
-        </div>
-      </div>
+  <!-- Bottom bar: social links + copyright -->
+  <div class="relative z-10 max-w-shell mx-auto px-12 pb-8 flex items-center justify-between max-md:px-5 max-md:flex-col max-md:gap-4">
+    <div class="flex gap-6 flex-wrap">
+      <a href="#" class="text-sm text-light/40 hover:text-light transition-colors">LinkedIn</a>
+      <a href="#" class="text-sm text-light/40 hover:text-light transition-colors">Instagram</a>
+      <a href="#" class="text-sm text-light/40 hover:text-light transition-colors">X</a>
+      <a href="#" class="text-sm text-light/40 hover:text-light transition-colors">GitHub</a>
     </div>
-  </div>
-
-  <!-- Social links -->
-  <div class="relative z-10 max-w-shell mx-auto px-12 max-md:px-5">
-    <div class="flex gap-8 pb-20 flex-wrap max-md:pb-14">
-      <a href="#" class="text-sm text-light/50 hover:text-light transition-colors">LinkedIn</a>
-      <a href="#" class="text-sm text-light/50 hover:text-light transition-colors">Instagram</a>
-      <a href="#" class="text-sm text-light/50 hover:text-light transition-colors">X</a>
-      <a href="#" class="text-sm text-light/50 hover:text-light transition-colors">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Bottom bar -->
-  <div class="relative z-10 max-w-shell mx-auto px-12 pb-8 flex justify-between items-center max-md:px-5 max-md:flex-col max-md:gap-3">
     <span class="text-[13px] text-light/25">&copy; 2026 Savannah Black</span>
-    <a href="#" class="text-[13px] text-light/25 hover:text-light/50 transition-colors">Privacy</a>
   </div>
 </footer>
 
@@ -61,18 +39,3 @@
     z-index: 0;
   }
 </style>
-
-<script>
-  function updateSydneyTime() {
-    const el = document.getElementById('sydneyTime');
-    if (!el) return;
-    el.textContent = new Date().toLocaleTimeString('en-AU', {
-      timeZone: 'Australia/Sydney',
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true,
-    });
-  }
-  updateSydneyTime();
-  setInterval(updateSydneyTime, 60000);
-</script>

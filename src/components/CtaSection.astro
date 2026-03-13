@@ -7,12 +7,11 @@ const subtitleWords = subtitle.split(' ');
 <!-- CTA — 200vh tall gradient section matching New Genre -->
 <section
   class="relative"
-  style="height: 200vh; background: linear-gradient(180deg, #e8dca0 0%, #e4cc90 8%, #e8b478 16%, #f0b46a 26%, #e09850 36%, #d86842 46%, #b8462e 56%, #843220 66%, #582414 74%, #381a10 82%, #28140e 90%, #1e1310 100%)"
+  style="height: 200vh; background: linear-gradient(180deg, #e8dca0 0%, #e4d498 8%, #dcc488 16%, #d4b070 26%, #c89858 36%, #b07840 46%, #8c5830 56%, #664024 66%, #482c18 74%, #321e12 82%, #24160e 90%, #1e1310 100%)"
   id="contact"
 >
   <div class="grain-overlay" aria-hidden="true"></div>
-  <div class="sticky top-0 h-screen flex flex-col justify-between px-12 py-16 max-md:px-5 max-md:py-10">
-    <div></div>
+  <div class="sticky top-0 h-screen flex flex-col justify-center px-12 py-16 max-md:px-5 max-md:py-10">
     <div class="max-w-[820px]">
       <h2 class="font-serif text-[56px] leading-[1.12] tracking-[-0.02em] mb-3 max-lg:text-[42px] max-md:text-[32px]">
         {headlineWords.map((word) => (
@@ -24,11 +23,9 @@ const subtitleWords = subtitle.split(' ');
           <span class="inline-block mr-[0.22em] cta-word-sub">{word}</span>
         ))}
       </p>
-    </div>
-    <div>
       <a
         href="mailto:sav.black@outlook.com"
-        class="cta-btn inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium tracking-tight transition-colors"
+        class="cta-btn inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-medium tracking-tight transition-colors mt-8"
       >
         Get in touch
       </a>

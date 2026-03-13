@@ -22,13 +22,6 @@ import { projects } from '../data/projects';
   <div class="relative z-10 bg-white">
     <LogoStrip />
 
-    <div class="max-w-shell mx-auto px-12 max-md:px-5" id="work">
-      <SectionHeading title="Selected work, from strategy to shipping" linkText="See all" linkHref="/work" />
-      {projects.map(p => <WorkRow {...p} />)}
-    </div>
-
-    <GradientInterlude />
-
     <div class="max-w-shell mx-auto px-12 py-20 max-md:px-5" id="approach">
       <SectionHeading title="How I work, shaped by building real things" />
       <div class="grid grid-cols-3 gap-5 py-10 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -36,6 +29,13 @@ import { projects } from '../data/projects';
         <ProcessCard title="Design" description="Build systems that retain context, reduce repetition, and improve with use. Not one-off fixes." />
         <ProcessCard title="Build" description="Ship working software, operating systems, and delivery structures. Not decks." />
       </div>
+    </div>
+
+    <GradientInterlude />
+
+    <div class="max-w-shell mx-auto px-12 max-md:px-5" id="work">
+      <SectionHeading title="Selected work, from strategy to shipping" linkText="See all" linkHref="/work" />
+      {projects.map(p => <WorkRow {...p} />)}
     </div>
 
     <div class="max-w-shell mx-auto px-12 pb-20 max-md:px-5" id="writing">
