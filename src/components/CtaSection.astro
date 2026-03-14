@@ -7,7 +7,7 @@ const subtitleWords = subtitle.split(' ');
 <!-- CTA — 200vh tall gradient section matching New Genre -->
 <section
   class="relative"
-  style="height: 200vh; background: linear-gradient(180deg, #e4a0a0 0%, #dc8088 10%, #d4656e 20%, #b84e5c 30%, #943a4a 40%, #6e2535 55%, #4a1520 70%, #2a0a10 100%)"
+  style="height: 200vh; background: linear-gradient(180deg, transparent 0%, #1e1518 12%, #2e1822 22%, #4a1520 32%, #6e2535 42%, #943a4a 52%, #b84e5c 62%, #d4656e 72%, #dc8088 82%, #e4a0a0 92%, #f0b8b8 100%)"
   id="contact"
 >
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -43,6 +43,8 @@ const subtitleWords = subtitle.split(' ');
     background-size: 200px 200px;
     pointer-events: none;
     z-index: 1;
+    mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 100%);
   }
 
   .cta-word {
@@ -92,9 +94,9 @@ const subtitleWords = subtitle.split(' ');
         const rect = section.getBoundingClientRect();
         const progress = -rect.top / (rect.height - window.innerHeight);
         if (progress > 0.35) {
-          sticky?.classList.add('cta-dark');
-        } else {
           sticky?.classList.remove('cta-dark');
+        } else {
+          sticky?.classList.add('cta-dark');
         }
       },
       { threshold: Array.from({ length: 20 }, (_, i) => i / 19) }
@@ -106,9 +108,9 @@ const subtitleWords = subtitle.split(' ');
       const rect = section.getBoundingClientRect();
       const progress = -rect.top / (rect.height - window.innerHeight);
       if (progress > 0.35) {
-        sticky?.classList.add('cta-dark');
-      } else {
         sticky?.classList.remove('cta-dark');
+      } else {
+        sticky?.classList.add('cta-dark');
       }
     }, { passive: true });
   }

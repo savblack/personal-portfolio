@@ -22,7 +22,7 @@ import { projects } from '../data/projects';
   <div class="relative z-10">
     <LogoStrip />
 
-    <div class="max-w-shell mx-auto px-12 py-20 max-md:px-5" id="approach">
+    <div class="max-w-shell mx-auto px-12 py-20 pb-40 max-md:px-5 max-md:pb-24" id="approach">
       <SectionHeading title="How I work, shaped by building real things" />
       <div class="grid grid-cols-3 gap-5 py-10 max-lg:grid-cols-2 max-md:grid-cols-1">
         <ProcessCard title="Diagnose" description="Find the real constraint. Use AI to surface patterns and blockers before defaulting to intuition." />
@@ -31,24 +31,27 @@ import { projects } from '../data/projects';
       </div>
     </div>
 
-    <GradientInterlude />
+    <div class="text-light" style="background: linear-gradient(180deg, #ffffff 0%, #f5f7f2 3%, #e8edde 6%, #d6dfc6 10%, #cdd8bc 14%, #bccaaa 18%, #a8b896 21%, #7d8e6e 24%, #4f6048 27%, #2e3820 30%, #242920 32%, #1e2019 34%, #1c1c1a 36%, #1a1a1a 40%, #1a1a1a 100%)">
+      <GradientInterlude />
 
-    <div class="max-w-shell mx-auto px-12 max-md:px-5" id="work">
-      <SectionHeading title="Selected work, from strategy to shipping" linkText="See all" linkHref="/work" />
-      {projects.map(p => <WorkRow {...p} />)}
-    </div>
-
-    <div class="max-w-shell mx-auto px-12 pb-20 max-md:px-5" id="writing">
-      <SectionHeading title="Thinking out loud" linkText="Read all" linkHref="/writing" />
-      <div class="flex gap-5 overflow-x-auto py-10 no-scrollbar">
-        <FeedCard title="Why I build things on the side" meta="Essay" />
-        <FeedCard title="AI-native operations: what it actually means" meta="Essay" />
-        <FeedCard title="From operator to architect" meta="Essay" />
+      <div class="max-w-shell mx-auto px-12 max-md:px-5" id="work">
+        <SectionHeading title="Selected work, from strategy to shipping" linkText="See all" linkHref="/work" />
+        {projects.map(p => <WorkRow {...p} />)}
       </div>
+
+      <div class="max-w-shell mx-auto px-12 pb-20 max-md:px-5" id="writing">
+        <SectionHeading title="Thinking out loud" linkText="Read all" linkHref="/writing" />
+        <div class="flex gap-5 overflow-x-auto py-10 no-scrollbar">
+          <FeedCard title="Why I build things on the side" meta="Essay" />
+          <FeedCard title="AI-native operations: what it actually means" meta="Essay" />
+          <FeedCard title="From operator to architect" meta="Essay" />
+        </div>
+      </div>
+
+      <CtaSection />
     </div>
 
   </div>
 
-  <CtaSection />
   <Footer />
 </Base>

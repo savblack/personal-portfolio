@@ -8,8 +8,8 @@ const { title, meta, href = '#' } = Astro.props;
 ---
 <a href={href} class="min-w-[280px] max-w-[320px] flex-shrink-0 cursor-pointer group">
   <div class="h-[360px] bg-[var(--color-card)] rounded-2xl mb-4 flex items-center justify-center">
-    <span class="text-[13px] text-dark/20">Cover</span>
+    <span class="text-[13px] opacity-20">Cover</span>
   </div>
   <h3 class="text-base font-medium tracking-tight mb-1 group-hover:opacity-70 transition-opacity">{title}</h3>
-  <span class="text-xs text-dark/[0.35]">{meta}</span>
+  <span class="text-xs opacity-35">{meta}</span>
 </a>

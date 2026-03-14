@@ -10,7 +10,7 @@ const { title, linkText, linkHref } = Astro.props;
   <div class="flex justify-between items-baseline">
     <h2 class="font-serif text-[28px] font-normal tracking-[-0.01em] max-w-[560px] leading-[1.2]">{title}</h2>
     {linkText && linkHref && (
-      <a href={linkHref} class="text-[13px] font-medium tracking-tight text-[var(--color-muted)] hover:text-dark transition-colors flex items-center gap-1.5">
+      <a href={linkHref} class="text-[13px] font-medium tracking-tight opacity-40 hover:opacity-100 transition-opacity flex items-center gap-1.5">
         {linkText} &rarr;
       </a>
     )}

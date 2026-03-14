@@ -10,16 +10,16 @@ const { title, slug, description, badges } = Astro.props;
 <a href={`/work/${slug}`} class="flex gap-10 items-start py-10 border-b border-[var(--color-divider)] cursor-pointer hover:opacity-[0.85] transition-opacity max-md:flex-col max-md:gap-6">
   <div class="flex-1 pt-2">
     <h3 class="text-2xl font-medium tracking-tight mb-3">{title}</h3>
-    <p class="text-sm leading-relaxed text-[var(--color-muted)] mb-5 max-w-[360px]">{description}</p>
+    <p class="text-sm leading-relaxed opacity-50 mb-5 max-w-[360px]">{description}</p>
     <div class="flex gap-2 flex-wrap">
       {badges.map(badge => (
-        <span class="font-mono text-[11px] tracking-[0.01em] px-3 py-[5px] bg-[var(--color-badge)] rounded-lg text-dark/50">
+        <span class="font-mono text-[11px] tracking-[0.01em] px-3 py-[5px] bg-[var(--color-badge)] rounded-lg opacity-50">
           {badge}
         </span>
       ))}
     </div>
   </div>
   <div class="flex-[1.2] h-80 bg-[var(--color-card)] rounded-2xl flex items-center justify-center overflow-hidden max-md:w-full max-md:h-52">
-    <span class="text-[13px] text-dark/20">Project image</span>
+    <span class="text-[13px] opacity-20">Project image</span>
   </div>
 </a>
