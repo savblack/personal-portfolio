@@ -9,11 +9,11 @@ const secondaryLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 ---
-<nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-12 py-6 text-dark max-md:px-5">
-  <a href="/" class="text-sm font-semibold tracking-tight">Savannah Black</a>
+<nav id="mainNav" class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-12 py-6 text-dark max-md:px-5">
+  <a href="/" class="nav-brand text-sm font-semibold tracking-tight text-white">Savannah Black</a>
 
   <!-- Desktop links -->
-  <div class="hidden md:flex items-center gap-8 text-sm font-[450] tracking-tight">
+  <div class="nav-links hidden md:flex items-center gap-8 text-sm font-[450] tracking-tight">
     {links.map(l => (
       <a href={l.href} class="opacity-50 hover:opacity-100 transition-opacity">{l.label}</a>
     ))}
@@ -22,6 +22,14 @@ const secondaryLinks = [
       <a href={l.href} class="opacity-50 hover:opacity-100 transition-opacity">{l.label}</a>
     ))}
   </div>
+
+  <!-- Scroll-collapsed MENU button (desktop) -->
+  <button
+    class="nav-menu-btn hidden md:block text-sm font-[450] tracking-tight text-white"
+    aria-label="Open menu"
+  >
+    Menu
+  </button>
 
   <!-- Mobile hamburger -->
   <button
@@ -33,3 +41,53 @@ const secondaryLinks = [
     Menu
   </button>
 </nav>
+
+<style>
+  .nav-brand {
+    transition: opacity 0.3s ease;
+  }
+  .nav-links {
+    transition: opacity 0.3s ease;
+  }
+  .nav-menu-btn {
+    transition: opacity 0.3s ease;
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+
+  .nav-scrolled .nav-brand,
+  .nav-scrolled .nav-links {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  .nav-scrolled .nav-menu-btn {
+    opacity: 0.7 !important;
+    pointer-events: auto;
+  }
+  .nav-scrolled .nav-menu-btn:hover {
+    opacity: 1 !important;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  const menuBtn = nav?.querySelector('.nav-menu-btn');
+  const menuToggle = document.getElementById('menuToggle');
+
+  // Scroll listener — toggle collapsed state
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav?.classList.toggle('nav-scrolled', window.scrollY > 80);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Wire MENU button to open the existing mobile menu overlay
+  menuBtn?.addEventListener('click', () => {
+    menuToggle?.click();
+  });
+</script>
