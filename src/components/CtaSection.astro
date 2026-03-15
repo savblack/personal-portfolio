@@ -1,24 +1,24 @@
 ---
 const headline = "Let's build something that compounds.";
-const subtitle = "Find out how I chart the path from insight to impact — through strategy, systems, and building — turning ambitious ideas into things that actually work.";
+const subtitle = "Find out how I chart the path from insight to impact, through strategy, systems, and building, turning ambitious ideas into things that actually work.";
 const headlineWords = headline.split(' ');
 const subtitleWords = subtitle.split(' ');
 ---
 <!-- CTA — 200vh tall gradient section matching New Genre -->
 <section
   class="relative"
-  style="height: 200vh; background: linear-gradient(180deg, transparent 0%, #1e1518 12%, #2e1822 22%, #4a1520 32%, #6e2535 42%, #943a4a 52%, #b84e5c 62%, #d4656e 72%, #dc8088 82%, #e4a0a0 92%, #f0b8b8 100%)"
+  style="height: 200vh; background: linear-gradient(180deg, transparent 0%, #1e1518 12%, #2e1822 22%, #4a1520 32%, #6e2535 42%, #943a4a 52%, #b84e5c 62%, #d4656e 72%, #dc8088 82%, #e0a090 90%, #e4ad94 96%, #e8b498 100%)"
   id="contact"
 >
   <div class="grain-overlay" aria-hidden="true"></div>
-  <div class="sticky top-0 h-screen flex flex-col justify-center px-12 py-16 max-md:px-5 max-md:py-10">
+  <div class="sticky top-0 h-screen flex flex-col justify-center px-12 pt-36 pb-16 max-md:px-5 max-md:pt-28 max-md:pb-10">
     <div class="max-w-[820px]">
-      <h2 class="font-serif text-[56px] leading-[1.12] tracking-[-0.02em] mb-3 max-lg:text-[42px] max-md:text-[32px]">
+      <h2 class="font-serif text-[56px] leading-[0.85] tracking-[-0.02em] mb-6 max-lg:text-[42px] max-md:text-[32px]">
         {headlineWords.map((word) => (
           <span class="inline-block mr-[0.27em] cta-word">{word}</span>
         ))}
       </h2>
-      <p class="font-serif text-[40px] leading-[1.15] tracking-[-0.02em] max-w-[780px] max-lg:text-[30px] max-md:text-[24px]">
+      <p class="font-serif text-[40px] leading-[1.15] tracking-normal max-w-[780px] max-lg:text-[30px] max-md:text-[24px]">
         {subtitleWords.map((word) => (
           <span class="inline-block mr-[0.22em] cta-word-sub">{word}</span>
         ))}
@@ -93,7 +93,7 @@ const subtitleWords = subtitle.split(' ');
         // Calculate how far we've scrolled through the section
         const rect = section.getBoundingClientRect();
         const progress = -rect.top / (rect.height - window.innerHeight);
-        if (progress > 0.35) {
+        if (progress > 0.55) {
           sticky?.classList.remove('cta-dark');
         } else {
           sticky?.classList.add('cta-dark');
@@ -103,11 +103,20 @@ const subtitleWords = subtitle.split(' ');
     );
     observer.observe(section);
 
+    // Apply initial color state on load
+    const initRect = section.getBoundingClientRect();
+    const initProgress = -initRect.top / (initRect.height - window.innerHeight);
+    if (initProgress > 0.35) {
+      sticky?.classList.remove('cta-dark');
+    } else {
+      sticky?.classList.add('cta-dark');
+    }
+
     // Also listen to scroll for smoother updates
     window.addEventListener('scroll', () => {
       const rect = section.getBoundingClientRect();
       const progress = -rect.top / (rect.height - window.innerHeight);
-      if (progress > 0.35) {
+      if (progress > 0.55) {
         sticky?.classList.remove('cta-dark');
       } else {
         sticky?.classList.add('cta-dark');

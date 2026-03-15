@@ -31,7 +31,7 @@ import { projects } from '../data/projects';
       </div>
     </div>
 
-    <div class="text-light" style="background: linear-gradient(180deg, #ffffff 0%, #f5f7f2 3%, #e8edde 6%, #d6dfc6 10%, #cdd8bc 14%, #bccaaa 18%, #a8b896 21%, #7d8e6e 24%, #4f6048 27%, #2e3820 30%, #242920 32%, #1e2019 34%, #1c1c1a 36%, #1a1a1a 40%, #1a1a1a 100%)">
+    <div class="text-light" data-dark-zone style="background: linear-gradient(180deg, #ffffff 0%, #f5f7f2 3%, #e8edde 6%, #d6dfc6 10%, #cdd8bc 14%, #bccaaa 18%, #a8b896 21%, #7d8e6e 24%, #4f6048 27%, #2e3820 30%, #242920 32%, #1e2019 34%, #1c1c1a 36%, #1a1a1a 40%, #1a1a1a 100%)">
       <GradientInterlude />
 
       <div class="max-w-shell mx-auto px-12 max-md:px-5" id="work">
@@ -41,10 +41,13 @@ import { projects } from '../data/projects';
 
       <div class="max-w-shell mx-auto px-12 pb-20 max-md:px-5" id="writing">
         <SectionHeading title="Thinking out loud" linkText="Read all" linkHref="/writing" />
+        <div class="relative">
         <div class="flex gap-5 overflow-x-auto py-10 no-scrollbar">
           <FeedCard title="Why I build things on the side" meta="Essay" />
           <FeedCard title="AI-native operations: what it actually means" meta="Essay" />
           <FeedCard title="From operator to architect" meta="Essay" />
+        </div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#1a1a1a] to-transparent max-md:w-10" aria-hidden="true"></div>
         </div>
       </div>
 

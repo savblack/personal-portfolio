@@ -13,12 +13,11 @@ const secondaryLinks = [
   <a href="/" class="nav-brand text-sm font-semibold tracking-tight text-white">Savannah Black</a>
 
   <!-- Desktop links -->
-  <div class="nav-links hidden md:flex items-center gap-8 text-sm font-[450] tracking-tight">
+  <div class="nav-links hidden md:flex items-center gap-8 text-sm font-[450] tracking-tight text-white">
     {links.map(l => (
       <a href={l.href} class="opacity-50 hover:opacity-100 transition-opacity">{l.label}</a>
     ))}
-    <span class="w-px h-4 bg-current opacity-20" aria-hidden="true"></span>
-    {secondaryLinks.map(l => (
+{secondaryLinks.map(l => (
       <a href={l.href} class="opacity-50 hover:opacity-100 transition-opacity">{l.label}</a>
     ))}
   </div>
@@ -33,7 +32,7 @@ const secondaryLinks = [
 
   <!-- Mobile hamburger -->
   <button
-    class="md:hidden text-sm opacity-70"
+    class="md:hidden text-sm text-white opacity-70"
     id="menuToggle"
     aria-label="Open menu"
     aria-expanded="false"
@@ -50,9 +49,12 @@ const secondaryLinks = [
     transition: opacity 0.3s ease;
   }
   .nav-menu-btn {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease;
     opacity: 0 !important;
     pointer-events: none;
+  }
+  #menuToggle {
+    transition: opacity 0.3s ease, color 0.3s ease;
   }
 
   .nav-scrolled .nav-brand,
@@ -84,10 +86,41 @@ const secondaryLinks = [
       });
       ticking = true;
     }
-  });
+  }, { passive: true });
 
   // Wire MENU button to open the existing mobile menu overlay
   menuBtn?.addEventListener('click', () => {
     menuToggle?.click();
   });
+
+  // Adaptive menu button color — section-based dark/light detection
+  function updateMenuColor() {
+    const scrollY = window.scrollY;
+    const hero = document.querySelector('section.text-light') as HTMLElement;
+    const darkZone = document.querySelector('[data-dark-zone]') as HTMLElement;
+
+    let isDark = false;
+
+    // Hero section is dark
+    if (hero && scrollY < hero.offsetTop + hero.offsetHeight) {
+      isDark = true;
+    }
+    // The big gradient div (dark zone) containing work/writing/interlude
+    else if (darkZone) {
+      const zoneTop = darkZone.offsetTop;
+      const zoneBottom = zoneTop + darkZone.offsetHeight;
+      // Light at the very top of the gradient, dark after ~30% in
+      const transitionPoint = zoneTop + darkZone.offsetHeight * 0.30;
+      if (scrollY >= transitionPoint && scrollY < zoneBottom) {
+        isDark = true;
+      }
+    }
+
+    const color = isDark ? '#fff' : 'var(--color-dark)';
+    if (menuBtn) (menuBtn as HTMLElement).style.color = color;
+    if (menuToggle) menuToggle.style.color = color;
+  }
+
+  window.addEventListener('scroll', updateMenuColor, { passive: true });
+  updateMenuColor();
 </script>

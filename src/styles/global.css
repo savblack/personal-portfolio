@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,6 +27,13 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--color-dark);
   background: var(--color-bg);
+}
+
+/* ── Trirong tighter tracking ── */
+
+.font-serif {
+  letter-spacing: -0.04em;
+  line-height: 0.9;
 }
 
 /* ── Word reveal animation ── */

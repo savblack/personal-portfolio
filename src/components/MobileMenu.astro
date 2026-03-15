@@ -1,6 +1,6 @@
 <div
   id="mobileMenu"
-  class="fixed inset-0 z-[60] bg-dark text-light flex flex-col justify-between p-8 translate-x-full transition-transform duration-300"
+  class="fixed top-0 right-0 bottom-0 w-1/3 max-md:w-3/4 z-[60] bg-dark/50 backdrop-blur-xl text-light flex flex-col justify-between p-8 translate-x-full transition-transform duration-300"
   aria-hidden="true"
 >
   <div class="flex justify-between items-center">
@@ -28,13 +28,13 @@
     menu?.classList.remove('translate-x-full');
     menu?.setAttribute('aria-hidden', 'false');
     toggle?.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    // Keep page scrollable while menu is open
   }
   function closeMenu() {
     menu?.classList.add('translate-x-full');
     menu?.setAttribute('aria-hidden', 'true');
     toggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    // No overflow reset needed
   }
 
   toggle?.addEventListener('click', openMenu);
